@@ -1,0 +1,44 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group 'org.qiniu'
+version '0.1.0'
+
+sourceCompatibility = "11"
+
+repositories {
+    mavenLocal()
+    maven {
+        url 'https://mirrors.huaweicloud.com/repository/maven/'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter:2.2.4.RELEASE'
+    implementation 'org.springframework:spring-webmvc:5.2.3.RELEASE'
+    implementation 'com.qiniu:qiniu-java-sdk:7.2.27'
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = 'qiniu-spring-boot-autoconfigure'
+            version = version
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = 'mavenLocal'
+            url = 'd://xzmeasy/repository'
+        }
+    }
+}
