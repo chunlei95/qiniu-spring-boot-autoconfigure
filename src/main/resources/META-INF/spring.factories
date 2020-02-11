@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.qiniu.autoconfigure.config.QiNiuAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.qiniu.autoconfigure.config.QiNiuAutoConfiguration

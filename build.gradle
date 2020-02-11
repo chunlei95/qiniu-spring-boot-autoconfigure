@@ -1,5 +1,5 @@
 plugins {
-    id 'java-library'
+    id 'java'
     id 'maven-publish'
 }
 
@@ -16,9 +16,10 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter:2.2.4.RELEASE'
-    implementation 'org.springframework:spring-webmvc:5.2.3.RELEASE'
-    implementation 'com.qiniu:qiniu-java-sdk:7.2.27'
+    compile 'org.springframework.boot:spring-boot-starter:2.2.4.RELEASE'
+    compile 'org.springframework:spring-webmvc:5.2.3.RELEASE'
+    compile 'com.qiniu:qiniu-java-sdk:7.2.27'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:2.2.4.RELEASE"
 }
 
 java {
@@ -30,15 +31,20 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = group
-            artifactId = 'qiniu-spring-boot-autoconfigure'
+            artifactId = rootProject.name
             version = version
+            pom {
+                name = 'qiniu-spring-boot-autoconfigure'
+                description = 'qiniu spring boot autoconfigure'
+                url = 'd://xzmeasy/Repository'
+            }
             from components.java
         }
     }
     repositories {
         maven {
             name = 'mavenLocal'
-            url = 'd://xzmeasy/repository'
+            url = 'd://xzmeasy/Repository'
         }
     }
 }
