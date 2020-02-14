@@ -15,10 +15,6 @@ public class CustomPutRet {
 
     private String ext;
 
-    private ImageInfo imageInfo;
-
-    private String imageUrl;
-
     public String getKey() {
         return key;
     }
@@ -59,19 +55,4 @@ public class CustomPutRet {
         this.ext = ext;
     }
 
-    public ImageInfo getImageInfo() {
-        return imageInfo;
-    }
-
-    public void setImageInfo(ImageInfo imageInfo) {
-        this.imageInfo = imageInfo;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 }

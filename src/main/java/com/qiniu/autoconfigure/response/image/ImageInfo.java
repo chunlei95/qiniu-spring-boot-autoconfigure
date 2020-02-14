@@ -1,4 +1,4 @@
-package com.qiniu.autoconfigure.response;
+package com.qiniu.autoconfigure.response.image;
 
 /**
  * @author xzmeasy
